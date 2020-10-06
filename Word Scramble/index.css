@@ -1,0 +1,413 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --main-theme: #AD1457;
+}
+body {
+    background: linear-gradient(to right, #6A1B9A, #AD1457, #C62828);
+    overflow-x: hidden;
+}
+#background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+}
+#center-container {
+    margin: auto;
+    width: 500px;
+    height: auto;
+    position: relative;
+    top: 150px;
+    display: block;
+    background: white;
+}
+.box {
+    width: 100%;
+    height: 450px;
+    padding: 25px 0 10px 0;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    background: transparent;
+    transition: height .3s ease;
+    color: white;
+    background: rgba(0, 0, 0, .3);
+    border-bottom: 2px solid white;
+}
+#title-container {
+    font-size: 4.5em;
+    top: 0px;
+    transition: opacity .25s ease;
+    opacity: 1;
+    z-index: 1;
+}
+.title-text {
+    position: relative;
+    width: 325px;
+    margin: auto;
+    top: 10px;
+    font-family: 'Raleway', sans-serif;
+    line-height: 75px;
+}
+/*#title-container .title-text:nth-child(2) {
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+}*/
+.button {
+    width: 250px;
+    height: 50px;
+    background: transparent;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 20px 5px 0 5px;
+    transition: background .2s, color .2s;
+    font-family: 'Roboto', sans-serif;
+    border: 2px solid white;
+    color: white;
+    letter-spacing: 3px;
+    z-index: 1;
+}
+.button:hover {
+    background: white;
+    color: black;
+}
+#transition-button {
+    top: 110px;
+    display: none;
+}
+#start-button {
+    top: 175px;
+    display: none;
+    border: 2px solid white;
+    color: white;
+}
+#start-button:hover {
+    background: white;
+    color: black;
+}
+#username-header {
+    position: relative;
+    top: 50px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+}
+#name-field {
+    border: none;
+    background: #eee;
+    width: 300px;
+    height: 40px;
+    position: relative;
+    top: 75px;
+    font-family: 'Roboto',sans-serif;
+    font-size: 1.2rem;
+    padding-left: 10px;
+}
+#name-field:focus {
+    background: white;
+    outline-color: #bbb;
+}
+#namefield-alert {
+    width: 300px;
+    height: 70px;
+    padding: 10px;
+    background: var(--main-theme);
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+    margin: auto;
+    position: relative;
+    top: 100px;
+    color: white;
+    display: none;
+}
+#difficulty-container {
+    text-align: center;
+    z-index: 0;
+    transition: opacity .25s ease .25s;
+    opacity: 0;
+    color: white;
+}
+#difficulty-header {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    width: 100%;
+    height: 50px;
+    margin-top: -25px;
+    background: white;
+    color: black;
+    position: relative;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+#difficulty-level {
+    position: relative;
+    top: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+}
+#difficulty-slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    position: relative;
+    top: 100px;
+    width: 150px;
+    height: 50px;
+    background: #ccc;
+    cursor: pointer;
+    transition: background .3s;
+}
+#difficulty-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 50px;
+    height: 50px;
+    background: white;
+}
+#game-hint-container {
+    position: relative;
+    top: 110px;
+    margin: auto;
+    background: transparent;
+    width: 250px;
+    height: 40px;
+    display: none;
+}
+#game-hint-head {
+    width: 50px;
+    height: 100%;
+    float: left;
+    background: var(--main-theme);
+    color: white;
+}
+#game-hint-head > p {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    position: relative;
+    top: 10px;
+}
+#game-hint-body {
+    font-family: 'Roboto', sans-serif;
+    width: 200px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.05);
+    float: left;
+    text-align: center;
+}
+#game-hint-text {
+    position: relative;
+    top: 10px;
+}
+#gamescreen-container {
+    margin: auto;
+    width: 600px;
+    height: auto;
+    background: transparent;
+    position: relative;
+    top: 150px;
+    display: none;
+    /*animation: popIn .2s linear 0s 1;*/
+}
+#gamescreen-head {
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to right, #FFCDD2, #F8BBD0, #E1BEE7);
+    text-align: center;
+}
+#gamescreen-head > p {
+    position: relative;
+    top: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.5em;
+    color: black;
+}
+#gamescreen-body {
+    width: 100%;
+    height: 400px;
+    background: rgba(255, 255, 255, 1);;
+    margin-top: 0px;
+    text-align: center;
+}
+#feedback-container {
+    width: 250px;
+    height: 60px;
+    background: #00cc99;
+    position: relative;
+    top: 150px;
+    margin: auto;
+    text-align: center;
+    display: block;
+    /*animation: popIn .5s ease 1;*/
+}
+#feedback-text {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    position: relative;
+    top: 15px;
+    
+}
+#timer-container {
+    width: 50px;
+    height: 50px;
+    background: var(--main-theme);
+    position: relative;
+    top: 25px;
+    left: 525px;
+    text-align: center;
+    color: white;
+}
+#timer-value {
+    position: relative;
+    top: 10px;
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+}
+#word-display {
+    color: var(--main-theme);
+    position: relative;
+    top: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6em;
+}
+#word-input-field {
+    border: none;
+    position: relative;
+    top: 100px;
+    width: 250px;
+    height: 35px;
+    padding: 0 10px 0 10px;
+    font-size: 1.2em;
+    background: #ddd;
+    color: black;
+    display: block;
+    margin: auto;
+}
+#word-input-field:focus {
+    background: #eee;
+    outline: none;
+}
+#loading-container {
+    margin: auto;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    position: relative;
+    top: 300px;
+    display: none;
+}
+#loading-icon {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    margin: auto;
+    border: 3px solid white;
+    /*animation: rotate .5s ease 2;*/
+}
+#loading-text {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    top: 10px;
+}
+#scoreboard-container {
+    position: relative;
+    top: 100px;
+    width: 400px;
+    height: 600px;
+    margin: auto;
+    text-align: center;
+    display: none;
+}
+#scoreboard-head {
+    width: 100%;
+    height: 50px;
+    background: white;
+    color: var(--main-theme);
+}
+#scoreboard-body {
+    width: 100%;
+    height: 510px;
+    background: rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    padding: 5px;
+}
+#scoreboard-head p {
+    position: relative;
+    top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3em;
+}
+.tab {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3em;
+    box-sizing: border-box;
+    padding: 10px 5px 0 5px;
+    text-align: left;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+#to-scoreboard-button {
+    top: 150px;
+    background: transparent;
+    color: var(--main-theme);
+    border: 2px solid var(--main-theme);
+    display: none;
+}
+#to-scoreboard-button:hover {
+    background: var(--main-theme);
+    color: white;
+}
+#reset-button {
+    top: 75px;
+    display: none;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+#reset-button:hover {
+    background: white;
+    color: var(--main-theme);
+}
+#footer {
+    width: 100%;
+    height: 100px;
+    background: white;
+    position: absolute;
+    bottom: 0;
+    color: #880E4F;
+}
+#footer p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    position: relative;
+    top: 35px;
+}
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes rotate {
+    25% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+}

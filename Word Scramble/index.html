@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>Word Scramble</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="index.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto|Source+Sans+Pro" rel="stylesheet">
+</head>
+<body onload="checkUserName(); resetScoreboard()">
+    <div id="center-container">
+        <div class="box" id="title-container">
+            <p class="title-text"><span style="color: white">W</span>ord </p>
+            <p class="title-text"><span style="color: white">S</span>cramble</p>
+            <p id="username-header">Please enter a name</p>
+            <input id="name-field" type="text" placeholder="Nnaemeka" maxlength="20">
+            <div id="namefield-alert">Name cannot contain whitespace, special characters or start with a number.</div>
+            <div class="button" id="transition-button" onclick="nextPhase()">Next</div>
+        </div>
+        <div class="box" id="difficulty-container">
+            <p id="difficulty-header">Choose a difficulty setting</p>
+        <p id="difficulty-level"></p>
+        <input type="range" id="difficulty-slider" min="1" max="3" step="1" value="1" onchange="getDifficulty()">
+             <div class="button" id="start-button" onclick="startGame()">Start Game</div>
+        </div>
+    </div>
+    <div id="loading-container">
+        <div id="loading-icon"></div>
+        <p id="loading-text">Generating test...</p>
+    </div>
+    
+    <!--Game screen-->
+    <div id="gamescreen-container">
+        <div id="gamescreen-head">
+            <p id="question-text"></p>
+        </div>
+        <div id="gamescreen-body">
+            <div id="timer-container"><p id="timer-value"></p>
+            </div>
+            <p id="word-display"></p>
+            <input id="word-input-field" type="text" autofocus oninput="checkAnswer()">
+            <!--Game hint-->
+            <div id="game-hint-container">
+                <div id="game-hint-head">
+                    <p>Hint</p>
+                </div>
+                <div id="game-hint-body">
+                    <p id="game-hint-text"></p>
+                </div>
+            </div>
+            <div id="feedback-container">
+                <p id="feedback-text"></p>
+            </div>
+            <div id="score-report">
+                <p></p>
+            </div>
+            <div class="button" id="to-scoreboard-button" onclick="showScoreboard()">Go to Scoreboard</div>
+        </div>
+    </div>
+    
+    <!--Scoreboard-->
+    <div id="scoreboard-container">
+        <div id="scoreboard-head">
+            <p>Top Scores</p>
+        </div>
+        <div id="scoreboard-body">
+            <!--Score tabs are dynamically generated-->
+        </div>
+    </div>
+    
+    <!--Reset button-->
+    <div class="button" id="reset-button" onclick="resetGame()">Try again</div>
+    
+    <!--Footer-->
+    <div id="footer">
+        <p>Word Scramble &copy; 2019</p>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>
