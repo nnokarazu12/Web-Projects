@@ -1,7 +1,0 @@
---Calculator--
-
-Description
--Performs basic calculator functions
-
-Instructions
--Open index.html
