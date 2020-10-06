@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <title>Project 2</title>
+    <link href="index.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+</head>
+<body>
+    <div id="top-banner">Music Player</div>
+    <div id="main-content">
+    <div class="box" id="library-container">
+        <div id="library-head">Library</div>
+        <div id="library-body">
+            <div id="list-body">
+            </div>
+            <div id="upload-section">
+            <!--Upload button-->
+                <label for="upload-music" id="upload-button" onclick="uploadMusic(event)"><p>Upload</p></label>
+            <input type="file" id="upload-music" onchange="manageUpload()" accept="audio/*">
+            <!--Cancel upload-->
+                <div id="cancel-button" onclick="cancelUpload()"><p>Cancel</p></div>
+            </div>
+        </div>
+    </div>
+    <div class="box" id="main-player">
+        <div id="song-title-box"><p>No songs playing</p></div>
+        <div id="player-bar">
+            <div id="control-overlay" onclick="playAudio()">
+                <div class="fade" id="play-icon"></div>
+                <div class="fade" id="pause-icon">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <input type="range" id="seekbar" step=".5" value="0" max="100" disabled="true" onchange="manageSeek(); displayCurrentTime()">
+            <div id="duration"></div>
+        </div>
+    </div>
+    </div>
+    
+    
+    
+    <div id="bottom-banner"></div>
+    <script src="index.js"></script>
+</body>
+</html>
