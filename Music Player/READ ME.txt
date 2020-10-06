@@ -1,0 +1,9 @@
+-Music Player-
+
+Description
+-This web application allows you to store mand play music from your computer on the browser using session storage (a type of web storage)
+
+Instructions
+-Open the index.html file
+-Make sure that the music files that are uploaded are directly in the project folder for it to work
+-Make sure to close browser when finished.
