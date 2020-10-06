@@ -4,5 +4,4 @@ Description
 -Performs basic calculator functions
 
 Instructions
--Download zip file
 -Open calculator.html
